@@ -44,12 +44,11 @@ def main_function():
     logger.info(pprint.pformat(args))
     logger.info(cfg)
 
-    # 配置CUDNN参数
+  
     torch.backends.cudnn.benchmark = cfg.CUDNN.BENCHMARK
     torch.backends.cudnn.deterministic = cfg.CUDNN.DETERMINISTIC
     torch.backends.cudnn.enabled = cfg.CUDNN.ENABLED
 
-    # 声明模型
     if cfg.DATASET.DATASET == '300W':
         model = Sparse_alignment_network(cfg.W300.NUM_POINT, cfg.MODEL.OUT_DIM,
                                     cfg.MODEL.TRAINABLE, cfg.MODEL.INTER_LAYER,
@@ -132,7 +131,6 @@ def main_function():
     # best_model = False
     last_epoch = -1
 
-    # 获取优化器
     optimizer = get_optimizer(cfg, model)
     begin_epoch = cfg.TRAIN.BEGIN_EPOCH
     checkpoint_file = os.path.join(
