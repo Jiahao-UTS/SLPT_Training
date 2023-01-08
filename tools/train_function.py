@@ -32,7 +32,7 @@ def train(config, train_loader, model, loss_function, optimizer, epoch, output_d
         R_loss_2 = loss_function(landmarks[1], ground_truth)
         R_loss_3 = loss_function(landmarks[2], ground_truth)
 
-        loss = (R_loss_1 + R_loss_2 + R_loss_3) / 3.0
+        loss = 0.2 * R_loss_1 + 0.3 * R_loss_2 + 0.5 * R_loss_3
 
         optimizer.zero_grad()
         loss.backward()
