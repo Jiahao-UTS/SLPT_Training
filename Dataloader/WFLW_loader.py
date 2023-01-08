@@ -59,7 +59,6 @@ class WFLW_Dataset(Dataset):
             info_list = f.read().splitlines()
             f.close()
 
-        # 读取标注数据
         for temp_info in info_list:
             temp_point = []
             temp_info = temp_info.split(' ')
@@ -195,7 +194,6 @@ class WFLW_Dataset(Dataset):
                 'Translation': [0.0, 0.0],
             }
 
-            # 生成热点图
             # target = np.zeros((self.number_landmarks, self.Heatmap_size, self.Heatmap_size))
             # tpts = Points / (self.Image_size - 1) * (self.Heatmap_size - 1)
             # for i in range(self.number_landmarks):
