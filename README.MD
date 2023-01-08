@@ -87,7 +87,7 @@ If you find this work or code is helpful in your research, please cite:
 ```
 
 # License
-SLPT is released under the GPL-2.0 license. Please see the [LICENSE](LICENSE) file for more information.
+SLPT is released under the GPL-2.0 license. Please see the [LICENSE](License) file for more information.
 
 # Acknowledgments
    * This repository borrows or partially modifies the models from [HRNet](https://github.com/HRNet/HRNet-Facial-Landmark-Detection)
