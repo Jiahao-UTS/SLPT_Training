@@ -170,7 +170,6 @@ class Transformer(nn.Module):
         SLPT_Inherent_Layer = Inherent_Layer(d_model, nhead, dim_feedforward, dropout,
                                                     activation, normalize_before)
         decoder_norm = nn.LayerNorm(d_model)
-        # 定义decoder
         self.Transformer_block = Transformer_block(SLPT_Inherent_Layer, num_decoder_layer, decoder_norm, return_intermediate=True)
 
         self._reset_parameters()
@@ -182,7 +181,6 @@ class Transformer(nn.Module):
                 nn.init.xavier_uniform_(p)
 
     def forward(self, src):
-        # 获取feature形状
         bs, num_feat, len_feat = src.size()
 
         structure_encoding = self.structure_encoding.repeat(bs, 1, 1).permute(1, 0, 2)
