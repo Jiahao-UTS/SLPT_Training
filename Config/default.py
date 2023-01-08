@@ -1,6 +1,5 @@
 #--------------------------------------
-#功能: 存储默认参数
-#作者: Jiahao.Xia
+#Author: Jiahao.Xia
 #--------------------------------------
 
 from yacs.config import CfgNode as CN
