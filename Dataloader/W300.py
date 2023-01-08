@@ -73,7 +73,6 @@ class W300_Dataset(Dataset):
 
         return Data_base
 
-    # 图像翻转
     def Image_Flip(self, Img, GT):
         Mirror_GT = []
         width = Img.shape[1]
@@ -82,7 +81,6 @@ class W300_Dataset(Dataset):
         Img = cv2.flip(Img, 1)
         return Img, numpy.array(Mirror_GT)
 
-    # 通道转换
     def Channel_Transfer(self, Img, Flag):
         if Flag == 1:
             Img = cv2.cvtColor(Img, cv2.COLOR_RGB2GRAY)
